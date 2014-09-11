@@ -1,0 +1,14 @@
+
+/.checkstyle
+/.classpath
+/.gradle
+/.project
+/.settings
+
+/build/
+/bin/
+/test-output/
+
+*.swp
+.DS_Store
+
