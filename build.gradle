@@ -102,6 +102,7 @@ allprojects {
   dependencies {
     compile "commons-io:commons-io:${commons_io}"
     compile "io.dropwizard:dropwizard-core:${dropwizard}"
+    compile "io.dropwizard:dropwizard-client:${dropwizard}"
     compile "io.dropwizard:dropwizard-forms:${dropwizard}"
     compile "org.sikuli:sikuli-api:${sikuli}"
     compile "org.bytedeco:javacv:${javacv}"
