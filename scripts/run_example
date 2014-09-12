@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+
+import base64, json, os, sys, urllib2
+
+ROOT = os.path.abspath(os.path.dirname(__file__))
+IMAGE_DIR = '../src/test/resources/com/glonk/sikuliweb'
+BASE_URL = 'http://localhost:8080'
+OPENER = urllib2.build_opener()
+MIME_JSON = {'Content-Type': 'application/json'}
+
+def read_image(name):
+    'Read an image from disk, returning it as base64'
+    path = os.path.join(ROOT, IMAGE_DIR, name)
+    return base64.b64encode(open(path, 'rb').read())
+
+def find(**params):
+    'Find target image in screen'
+    data = json.dumps(params)
+    url = BASE_URL + '/find'
+    req = urllib2.Request(url, data, headers=MIME_JSON)
+    res = OPENER.open(req)
+    return json.loads(res.read())
+
+def main():
+    res = find(
+        screen = read_image('test-field.png'),
+        target = read_image('boing-ball.png'),
+        minScore = 0.9,
+        limit = 5
+        )
+    print json.dumps(res, indent=2)
+
+if __name__ == '__main__':
+    main()
+
