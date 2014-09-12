@@ -80,7 +80,7 @@ allprojects {
   apply plugin: 'release'
   apply plugin: 'application'
 
-  group 'com.squarespace.template'
+  group 'com.glonk.sikuli-web'
 
   sourceCompatibility = 1.7
   targetCompatibility = 1.7
