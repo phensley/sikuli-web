@@ -4,9 +4,8 @@ Sikuli Web
 
 Exposing the Sikuli API as a web service.
 
-This is a quick proof-of-concept for running Sikuli as a web service to provide
-access to image recognition functions to other testing frameworks, like
-Selenium.
+This is a quick proof-of-concept for running Sikuli as a web service, so that
+other testing frameworks like Selenium can use its image recognition functions.
 
 
 Example
@@ -59,8 +58,8 @@ if __name__ == '__main__':
 ```
 
 Running the above script produces this JSON output, indicating the positions
-within `screen` image where the `target` iamge matched, and the associated
-score:
+within `screen` image where the `target` image matched, and the score for each
+match.
 
 ```json
 
