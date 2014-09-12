@@ -12,6 +12,15 @@ Selenium.
 Example
 -------
 
+Start the Dropwizard service:
+
+```bash
+gradle run
+```
+
+
+Create a script to POST a request to the `/find` resource:
+
 ```python
 
 import base64, json, os, sys, urllib2
@@ -49,7 +58,9 @@ if __name__ == '__main__':
 
 ```
 
-*Outputs*:
+Running the above script produces this JSON output, indicating the positions
+within `screen` image where the `target` iamge matched, and the associated
+score:
 
 ```json
 

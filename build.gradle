@@ -78,6 +78,7 @@ allprojects {
   apply plugin: 'signing'
   apply plugin: 'maven'
   apply plugin: 'release'
+  apply plugin: 'application'
 
   group 'com.squarespace.template'
 
@@ -110,6 +111,12 @@ allprojects {
 
     testCompile "org.testng:testng:${testng}"
     testCompile "io.dropwizard:dropwizard-testing:${dropwizard}"
+  }
+
+  mainClassName = 'com.glonk.sikuliweb.SikuliWebApplication'
+
+  run {
+    args "server", "conf/dev.yml"
   }
 
   checkstyle {
@@ -199,6 +206,5 @@ allprojects {
       configurePom(pom)
     }
   }
-
 }
 
