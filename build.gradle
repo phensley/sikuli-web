@@ -82,8 +82,8 @@ allprojects {
 
   group 'com.glonk.sikuli-web'
 
-  sourceCompatibility = 1.7
-  targetCompatibility = 1.7
+  sourceCompatibility = 1.8
+  targetCompatibility = 1.8
 
   license {
     header rootProject.file('conf/apache-2.0-header.txt')
@@ -197,6 +197,7 @@ allprojects {
     }
   }
 
+  /*
   task uploadInternal(type: Upload) {
     description = 'Uploads archives to internal Nexus'
     configuration = configurations.archives
@@ -207,5 +208,6 @@ allprojects {
       configurePom(pom)
     }
   }
+  */
 }
 
