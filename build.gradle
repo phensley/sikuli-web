@@ -100,6 +100,8 @@ allprojects {
   }
 
   dependencies {
+    String osName = System.getProperty("os.name").toLowerCase()
+
     compile "commons-io:commons-io:${commons_io}"
     compile "io.dropwizard:dropwizard-core:${dropwizard}"
     compile "io.dropwizard:dropwizard-client:${dropwizard}"
@@ -108,7 +110,12 @@ allprojects {
     compile "org.bytedeco:javacv:${javacv}"
     compile "org.bytedeco:javacpp-presets:${javacv}"
     compile "org.bytedeco.javacpp-presets:opencv:${opencv}"
-    compile "org.bytedeco.javacpp-presets:opencv:${opencv}:macosx-x86_64"
+
+    if (osName.contains('mac os x')) {
+        compile "org.bytedeco.javacpp-presets:opencv:${opencv}:macosx-x86_64"
+    } else if (osName.contains('linux')) {
+        compile "org.bytedeco.javacpp-presets:opencv:${opencv}:linux-x86_64"
+    }
 
     testCompile "org.testng:testng:${testng}"
     testCompile "io.dropwizard:dropwizard-testing:${dropwizard}"
