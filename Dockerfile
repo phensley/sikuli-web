@@ -23,6 +23,10 @@ RUN cd /data/sikuli-web ; \
     rm sikuli-web-${VER}.zip ; \
     mv sikuli-web-${VER} sikuli-web
 
+RUN useradd sikuli && echo "sikuli:sikuli" | chpasswd && adduser sikuli sudo
+RUN chown -R sikuli:sikuli /data
+
+USER sikuli
 EXPOSE 8080
 CMD ["/data/sikuli-web/bin/sikuli-web", "server"]
 
